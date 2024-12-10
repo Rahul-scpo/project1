@@ -1,0 +1,183 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <style>
+        body {
+
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      margin: 0;
+      padding: 0;
+      color: #ddd;
+    }
+
+        .button-container {
+            text-align: center;
+            margin-top: auto;
+        }
+
+        button {
+            padding: 15px 30px;
+            margin: 15px;
+            font-size: 18px;
+            cursor: pointer;
+            border: none;
+            border-radius: 10px;
+            background-color: #007BFF;
+            color: white;
+            transition: background-color 0.3s ease;
+            font-family: Comic Sans MS;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+            transform: scale(1.1);
+        }
+
+        .background-image {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: url('{% static "hommeee.png" %}');
+            background-size: cover;
+            background-position: center;
+            z-index: -1;
+        }
+
+
+        .centered-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+.bn5 {
+  padding: 0.6em 2em;
+  border: none;
+  outline: none;
+  color: rgb(255, 255, 255);
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+}
+
+.bn5:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowingbn5 20s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+@keyframes glowingbn5 {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.bn5:active {
+  color: #000;
+}
+
+.bn5:active:after {
+  background: transparent;
+}
+
+.bn5:hover:before {
+  opacity: 1;
+}
+
+.bn5:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #5DADE2 ;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+
+        nav ul {
+      background-color: #B6DCF7;
+      text-align: center;
+      position: fixed;
+      width: 100%;
+      margin: 0;
+      padding: 10px 0;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      font-family: Comic Sans MS;
+    }
+
+    nav ul li {
+      list-style: none;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: green;
+    }
+
+    nav ul li a:hover {
+      color: blue;
+    }
+    </style>
+</head>
+<body>
+    <div class="background-image"></div>
+
+    <nav>
+    <ul id='navbar'>
+      <li><a href="path4" >Profile</a></li>
+      <li><a href="path3" >Contact Us</a></h4></li>
+        <li><a href="path5" >Log Out</a></h4></li>
+    </ul>
+  </nav>
+
+
+    <!-- Button container for centered buttons -->
+    <div class="centered-button">
+        <a href="path2"><button class="bn5">Upload data</button></a>
+        <a href="path3"><button class="bn5">Display data</button></a>
+    </div>
+</body>
+</html>

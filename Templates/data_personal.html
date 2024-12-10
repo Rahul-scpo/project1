@@ -1,0 +1,75 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Personal Data</title>
+    <style>
+        .background-image {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: url('{% static "hommeee.png" %}');
+            background-size: cover;
+            background-position: center;
+            z-index: -1;
+        }
+        h3{
+            text-align: center;
+            color: rgba(5, 5, 5, 0.371);
+            font-weight:bolder;
+            text-shadow: 2px 2px 5px rgba(47, 165, 229, 0.451);
+        }
+        .align{
+            text-align: center;
+            color: black;
+        }
+        thead{
+            border-bottom: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="background-image"></div>
+    <div class="border rounded p-4 m-4 text-dark" style="background-color:rgba(105, 143, 161, 0.377);">
+        <input type="button" class="display-4 pl-4 ml-4 btn btn-dark rounded-pill" value="Back" onclick="history.back()"/>
+        <h3>Personal Data</h3>
+        <hr>
+        <table class="table">
+            <thead>
+            <tr class="align">
+                <th><i>Name</i></th>
+                <th><i>Lastname</i></th>
+                <th><i>DOB</i></th>
+                <th><i>Age</i></th>
+                <th><i>Address</i></th>
+                <th><i>Email</i></th>
+                <th><i>number</i></th>
+                <th><i>Action</i></th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for a in personalkey %}
+            <tr>
+                <td><i>{{ a.Name }}</i></td>
+                <td><i>{{ a.lastname }}</i></td>
+                <td><i>{{ a.dob }}</i></td>
+                <td><i>{{ a.age }}</i></td>
+                <td><i>{{ a.address }}</i></td>
+                <td><i>{{ a.Email }}</i></td>
+                <td><i>{{ a.number }}</i></td>
+                <td><a href="/path16/{{ a.id }}" class="btn btn-dark btn-outline-transparent rounded text-light">Edit/Update</a></td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        <hr>
+    </div>
+</div>
+</body>
+</html>
